@@ -15,9 +15,12 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.sf_help.app.Home;
 import com.sf_help.app.R;
+import com.sf_help.app.Views.ProfileFragments.ProfileUpdate;
 
 public class Category extends Fragment {
+    BottomNavigationView mBottomNav;
 
     CardView mGardening;
     @Nullable
@@ -38,8 +41,6 @@ public class Category extends Fragment {
                 fragmentTransaction.replace(R.id.fragment_holder,jobFragment);
                 fragmentTransaction.addToBackStack("Job");
                 fragmentTransaction.commit();
-
-                Toast.makeText(v.getContext(),"Garden",Toast.LENGTH_LONG).show();
             }
         });
 

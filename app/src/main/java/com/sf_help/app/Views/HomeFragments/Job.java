@@ -37,6 +37,8 @@ public class Job extends Fragment {
 
         View v = inflater.inflate(R.layout.fragment_job, container, false);
 
+        Toast.makeText(v.getContext(),"s",Toast.LENGTH_LONG).show();
+
         mJobCompany = v.findViewById(R.id.job_list_comp_logo);
         mJobCompany.setOnClickListener(new View.OnClickListener() {
             @Override
