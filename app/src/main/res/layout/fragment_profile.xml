@@ -5,7 +5,12 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <com.google.android.material.appbar.AppBarLayout
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#EFEFEF"
+        android:orientation="vertical">
+        <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -22,11 +27,13 @@
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/ic_black_back"/>
             <TextView
+                android:id="@+id/updateProfile"
+                android:clickable="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Edit profile"
                 android:gravity="right"
-                android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                android:fontFamily="@font/cern_normal"
                 android:textAllCaps="false"
                 android:textColor="#24AC70"
                 android:textAlignment="gravity"
@@ -34,27 +41,56 @@
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/hero"
-            android:elevation="8dp"/>
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Lia Castro"
-            android:textAllCaps="false"
-            android:layout_marginTop="15dp"
-            android:fontFamily="@font/cern_normal"
-            android:textSize="20sp"
-            android:textColor="#333"/>
+            android:gravity="center_horizontal"
+            android:paddingBottom="10dp"
+            android:orientation="vertical">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/hero"
+                android:elevation="8dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lia Castro"
+                android:textAllCaps="false"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/cern_normal"
+                android:textSize="20sp"
+                android:textColor="#333"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp"
+                android:paddingLeft="15dp">
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_gravity="center_vertical"
+                    app:srcCompat="@drawable/ic_location_black"/>
+                <TextView
+                    android:paddingLeft="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Dumaguete City"/>
+            </LinearLayout>
+
+        </LinearLayout>
 
     </LinearLayout>
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabIndicatorAnimationDuration="@android:integer/config_mediumAnimTime"
+        app:tabBackground="@drawable/tab_back_nav"
+        app:tabIndicatorHeight="0dp"
+        app:tabTextColor="@color/tab_color"
+        app:tabRippleColor="#fccf31"/>
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/profile_view_pager"
         android:layout_width="match_parent"

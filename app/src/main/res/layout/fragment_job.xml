@@ -4,40 +4,20 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
-    <LinearLayout
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center_vertical"
-        android:gravity="center_vertical"
-        android:layout_marginBottom="20dp"
-        android:orientation="horizontal">
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:textFontWeight="300"
-                android:text="Apply now"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="All Job"
-                android:textSize="30sp"
-                android:textAllCaps="false"
-                android:textColor="#333"
-                android:fontFamily="@font/cern_font"/>
-
-        </LinearLayout>
-
-        <LinearLayout
+        android:background="@null"
+        app:elevation="0dp"
+        android:layout_height="?attr/actionBarSize">
+        <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                app:srcCompat="@drawable/ic_menu"/>
+
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/acc_ico"
                 android:layout_width="40dp"
@@ -48,7 +28,28 @@
                 app:civ_border_width="1dp"
                 android:layout_gravity="right"
                 android:layout_marginRight="20dp"/>
-        </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textFontWeight="300"
+            android:text="Apply now"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Job Listing"
+            android:textSize="30sp"
+            android:textAllCaps="false"
+            android:textColor="#333"
+            android:fontFamily="@font/cern_font"/>
     </LinearLayout>
 
     <ScrollView android:layout_width="match_parent"

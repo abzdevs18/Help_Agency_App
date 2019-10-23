@@ -11,11 +11,12 @@ import androidx.fragment.app.Fragment;
 
 import com.sf_help.app.R;
 
-public class PendingApplicationFragment extends Fragment {
+public class ProfileUpdate extends Fragment {
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.profile_pending_fragment, container, false);
+        View v = inflater.inflate(R.layout.profile_update, container, false);
 
         return  v;
     }

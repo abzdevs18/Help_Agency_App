@@ -5,40 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-    <LinearLayout
+
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center_vertical"
-        android:gravity="center_vertical"
-        android:layout_marginBottom="20dp"
-        android:orientation="horizontal">
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:textFontWeight="300"
-                android:text="Choose"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Job's Category"
-                android:textSize="30sp"
-                android:textAllCaps="false"
-                android:textColor="#333"
-                android:fontFamily="@font/cern_font"/>
-
-        </LinearLayout>
-
-        <LinearLayout
+        android:background="@null"
+        app:elevation="0dp"
+        android:layout_height="?attr/actionBarSize">
+        <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                app:srcCompat="@drawable/ic_menu"/>
+
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/acc_ico"
                 android:layout_width="40dp"
@@ -49,7 +30,29 @@
                 app:civ_border_width="1dp"
                 android:layout_gravity="right"
                 android:layout_marginRight="20dp"/>
-        </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textFontWeight="300"
+            android:text="Choose"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Job's Category"
+            android:textSize="30sp"
+            android:textAllCaps="false"
+            android:textColor="#333"
+            android:fontFamily="@font/cern_font"/>
+
     </LinearLayout>
 
     <GridLayout
@@ -67,16 +70,14 @@
             android:layout_height="0dp"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
-            android:layout_marginBottom="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
+            android:layout_margin="10dp"
             android:background="#fff"
             app:cardElevation="8dp"
             app:cardCornerRadius="8dp"
             >
             <LinearLayout
                 android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_margin="16dp"
+                android:layout_margin="5dp"
                 android:orientation="vertical"
                 android:layout_width="wrap_content"
                 android:gravity="center"
@@ -109,16 +110,14 @@
             android:layout_height="0dp"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
-            android:layout_marginBottom="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
+            android:layout_margin="10dp"
             android:background="#fff"
             app:cardElevation="8dp"
             app:cardCornerRadius="8dp"
             >
             <LinearLayout
                 android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_margin="16dp"
+                android:layout_margin="5dp"
                 android:orientation="vertical"
                 android:layout_width="wrap_content"
                 android:gravity="center"
@@ -151,16 +150,16 @@
             android:layout_height="0dp"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
-            android:layout_marginBottom="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:background="#fff"
             app:cardElevation="8dp"
             app:cardCornerRadius="8dp"
             >
             <LinearLayout
                 android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_margin="16dp"
+                android:layout_margin="5dp"
                 android:orientation="vertical"
                 android:layout_width="wrap_content"
                 android:gravity="center"
@@ -194,9 +193,9 @@
             android:layout_height="0dp"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
-            android:layout_marginBottom="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:background="#FF9000"
             app:cardBackgroundColor="#FF9000"
             app:cardElevation="8dp"
@@ -204,7 +203,7 @@
             >
             <LinearLayout
                 android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_margin="16dp"
+                android:layout_margin="5dp"
                 android:orientation="vertical"
                 android:layout_width="wrap_content"
                 android:gravity="center"
@@ -238,16 +237,16 @@
             android:layout_height="0dp"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
-            android:layout_marginBottom="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:background="#333"
             app:cardElevation="8dp"
             app:cardCornerRadius="8dp"
             >
             <LinearLayout
                 android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_margin="16dp"
+                android:layout_margin="5dp"
                 android:orientation="vertical"
                 android:layout_width="wrap_content"
                 android:gravity="center"
@@ -280,16 +279,16 @@
             android:layout_height="0dp"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
-            android:layout_marginBottom="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:background="#fff"
             app:cardElevation="8dp"
             app:cardCornerRadius="8dp"
             >
             <LinearLayout
                 android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_margin="16dp"
+                android:layout_margin="5dp"
                 android:orientation="vertical"
                 android:layout_width="wrap_content"
                 android:gravity="center"

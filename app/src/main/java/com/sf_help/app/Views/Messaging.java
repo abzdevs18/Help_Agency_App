@@ -15,6 +15,8 @@ import com.sf_help.app.Home;
 import com.sf_help.app.R;
 import com.sf_help.app.Views.HomeFragments.Chat;
 import com.sf_help.app.Views.HomeFragments.Job;
+import com.sf_help.app.Views.HomeFragments.Profile;
+import com.sf_help.app.Views.ProfileFragments.ProfileUpdate;
 
 import java.util.zip.Inflater;
 
@@ -46,7 +48,6 @@ public class Messaging extends AppCompatActivity {
                 return true;
             case R.id.chat_info:
                 // app icon in action bar clicked; goto parent activity.
-                Toast.makeText(this,"M",Toast.LENGTH_LONG).show();
             default:
                 return super.onOptionsItemSelected(item);
         }
