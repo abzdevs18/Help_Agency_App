@@ -170,6 +170,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Apply Now"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp"
+            android:textColor="#fff"
+            android:elevation="6dp"
+            android:fontFamily="@font/cern_bold"
+            android:background="@drawable/apply_btn_gradient"
             android:layout_gravity="center_horizontal"
             android:layout_margin="10dp"/>
     </LinearLayout>
