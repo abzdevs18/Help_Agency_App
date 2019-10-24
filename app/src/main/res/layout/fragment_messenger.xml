@@ -126,7 +126,7 @@
                 android:layout_height="45dp"
                 android:padding="10dp"
                 android:background="@drawable/circle_sending"
-                android:src="@drawable/ic_send_black_24dp" />
+                android:src="@drawable/send_btn"/>
 
         </LinearLayout>
     </LinearLayout>

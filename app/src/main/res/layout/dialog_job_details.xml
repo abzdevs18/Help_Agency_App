@@ -39,11 +39,26 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Sr. UI UX Designer"
-                    android:fontFamily="sans-serif-condensed-medium"/>
-                <TextView
-                    android:layout_width="match_parent"
+                    android:textAllCaps="false"
+                    android:textSize="18sp"
+                    android:textColor="#333"
+                    android:fontFamily="@font/cern_bold"/>
+                <LinearLayout
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="$60k-70k/Month"/>
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp">
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center_vertical"
+                        app:srcCompat="@drawable/ic_monetization"/>
+                    <TextView
+                        android:paddingLeft="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="$60k-70k/Month"/>
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
@@ -54,24 +69,42 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Job Description"
-                android:fontFamily="sans-serif-black"
+                android:fontFamily="@font/cern_normal"
+                android:textColor="#444"
                 android:textSize="24sp"/>
-            <TextView
+
+            <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:textColor="#333"
-                android:text="@string/lorem"/>
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/descriptionScroll"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textColor="#555"
+                        android:paddingTop="5sp"
+                        android:text="@string/lorem"/>
+                </LinearLayout>
+            </ScrollView>
+
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
             android:orientation="vertical">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Job Bidders"
-                android:fontFamily="sans-serif-black"
+                android:fontFamily="@font/cern_normal"
+                android:textColor="#333"
                 android:textSize="24sp"/>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -128,7 +161,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Skills Needed"
-                android:fontFamily="sans-serif-black"
+                android:fontFamily="@font/cern_normal"
+                android:textColor="#333"
                 android:textSize="24sp"/>
             <LinearLayout
                 android:layout_width="match_parent"

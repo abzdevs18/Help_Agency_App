@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="190dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:cardview="http://schemas.android.com/tools"
+    android:id="@+id/categoryItem"
+    android:layout_columnWeight="1"
+    android:layout_rowWeight="1"
+    android:layout_margin="10dp"
+    android:clickable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    cardview:cardCornerRadius="4dp"
+    app:cardElevation="8dp"
+    app:cardCornerRadius="8dp">
+    <LinearLayout
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:layout_margin="5dp"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+<!-- cardBack: #FF9000-->
+        <ImageView
+            android:id="@+id/cat_image"
+            android:src="@drawable/helmet"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="64dp"
+            android:layout_height="64dp" />
+
+        <TextView
+            android:id="@+id/cat_name"
+            android:text="Carpentry"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/cat_jobs_available"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textFontWeight="400"
+            android:text="34 Jobs"/>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

@@ -29,8 +29,8 @@ public class Registration extends AppCompatActivity {
             }
         });
 
-//        mUserType = findViewById(R.id.iUType);
-//        mUserType.setTextOff("No");
-//        mUserType.setTextOn("Yes");
+        mUserType = findViewById(R.id.iUType);
+        mUserType.setTextOff("No");
+        mUserType.setTextOn("Yes");
     }
 }

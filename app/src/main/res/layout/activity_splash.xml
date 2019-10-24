@@ -39,6 +39,8 @@
             android:textColor="@android:color/white"
             android:textAppearance="@style/tabTheme"
             android:textSize="30sp"
+            android:fontFamily="@font/cern_bold"
+            android:lineHeight="45sp"
             android:text="@string/splash_punch"
             android:gravity="left"
             android:textAlignment="gravity"/>
@@ -61,7 +63,7 @@
             android:paddingRight="40dp"
             android:layout_marginBottom="30dp"
             android:background="@drawable/shape"
-            android:drawableRight="@drawable/ic_right"/>
+            app:drawableRightCompat="@drawable/ic_right"/>
     </LinearLayout>
 
 </RelativeLayout>

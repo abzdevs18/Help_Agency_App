@@ -24,7 +24,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/ic_search_black_24dp"
+                app:drawableLeftCompat="@drawable/ic_search_black_24dp"
                 android:drawablePadding="5dp"
                 android:layout_marginLeft="25dp"
                 android:layout_marginRight="20dp"

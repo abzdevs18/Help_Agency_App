@@ -21,10 +21,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
                 android:padding="5dp"
                 android:touchscreenBlocksFocus="true"
+                android:background="#0F333333"
                 android:elevation="8dp"
                 android:orientation="vertical">
                 <LinearLayout
@@ -75,6 +76,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                            android:fontFamily="@font/cern_normal"
                             android:textAllCaps="false"
                             android:text="RexJob"/>
                         <LinearLayout
@@ -86,6 +88,7 @@
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:textColor="#444"
                                 android:text="Sept. 10, 2019"/>
                         </LinearLayout>
                     </LinearLayout>
