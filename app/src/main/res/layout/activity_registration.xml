@@ -120,7 +120,7 @@
                 android:background="@drawable/shape_field"/>
 
             <Button
-                android:id="@+id/loginBtn"
+                android:id="@+id/regBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
