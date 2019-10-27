@@ -1,10 +1,14 @@
 package com.sf_help.app.api;
 
+import com.sf_help.app.Models.GetJob;
 import com.sf_help.app.Models.SignIn;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface ApiInterface {
@@ -14,4 +18,6 @@ public interface ApiInterface {
     Call<SignIn> signin(
             @Field("uNameEmail") String uEmailName,
             @Field("uPassword") String uPassword);
+    @POST("api/getjobs")
+    Call<List<GetJob>> availableJobs();
 }

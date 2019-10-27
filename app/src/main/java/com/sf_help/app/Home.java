@@ -8,6 +8,11 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -20,10 +25,26 @@ import com.sf_help.app.Views.ProfileFragments.ProfileUpdate;
 
 public class Home extends AppCompatActivity {
     Fragment selectedFragment;
+    FrameLayout mFrame;
+    int Navigation = 0;
+    RelativeLayout mHomeLayout;
+    ImageView mImage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        mFrame = findViewById(R.id.fragment_holder);
+        mFrame.bringToFront();
+
+        Window w = getWindow();
+        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+
+        mHomeLayout = findViewById(R.id.relativeHome);
+        int resourceId = getResources().getIdentifier("navigation_bar_height","dimen","android");
+        if (resourceId > 0){
+            Navigation = getResources().getDimensionPixelSize(resourceId);
+            mHomeLayout.setPadding(0,0,0,Navigation);
+        }
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
         bottomNavigationView.setOnNavigationItemSelectedListener(navListener);

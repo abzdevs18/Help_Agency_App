@@ -14,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Home" />
+        <activity android:name=".Home"
+            android:windowSoftInputMode="adjustResize"/>
         <activity
             android:name=".Views.Login"
             android:label="@string/app_name"

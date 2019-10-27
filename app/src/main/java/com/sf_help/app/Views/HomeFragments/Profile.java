@@ -17,6 +17,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
+import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
 import com.sf_help.app.Adapters.ViewPagerProfile;
@@ -28,12 +29,24 @@ public class Profile extends Fragment {
     Layout mProfile;
     ViewPager mViewpager;
     TextView mUpdateProfile;
+    int statusHeight = 0;
+    AppBarLayout chatAppBar;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_profile, container, false);
         mViewpager = v.findViewById(R.id.profile_view_pager);
         mViewpager.setAdapter(new ViewPagerProfile(getChildFragmentManager()));
+
+        // TODO: 10/27/2019 to make the appBar below to the status bar
+        chatAppBar = v.findViewById(R.id.appBarLayout);
+        int resourceId = getResources().getIdentifier("status_bar_height","dimen","android");
+        if (resourceId > 0){
+            statusHeight = getResources().getDimensionPixelSize(resourceId);
+            chatAppBar.setPadding(0,statusHeight,0,0);
+        }
+        //End status bar
 
         TabLayout tabLayout = v.findViewById(R.id.tab_layout);
         tabLayout.setupWithViewPager(mViewpager);

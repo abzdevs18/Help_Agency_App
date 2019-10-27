@@ -102,36 +102,42 @@
                         android:background="#333"
                         android:layout_height="50dp"/>
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="90dp"
+                    android:background="#00421E1E"
                     android:gravity="center_vertical"
                     android:orientation="vertical">
+
                     <TextView
-                        android:paddingLeft="15dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/cern_bold"
+                        android:paddingLeft="15dp"
                         android:text="Sr. UI UX Designer"
                         android:textAllCaps="false"
-                        android:textSize="18sp"
                         android:textColor="#333"
-                        android:fontFamily="@font/cern_bold"/>
+                        android:textSize="18sp" />
+
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
                         android:layout_marginTop="5dp"
+                        android:orientation="horizontal"
                         android:paddingLeft="15dp">
+
                         <ImageView
                             android:layout_width="15dp"
                             android:layout_height="15dp"
                             android:layout_gravity="center_vertical"
-                            app:srcCompat="@drawable/ic_monetization"/>
+                            app:srcCompat="@drawable/ic_monetization" />
+
                         <TextView
-                            android:paddingLeft="5dp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="$60k-70k/Month"/>
+                            android:paddingLeft="5dp"
+                            android:text="$60k-70k/Month" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>

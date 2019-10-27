@@ -14,6 +14,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.sf_help.app.Home;
 import com.sf_help.app.Models.SignIn;
 import com.sf_help.app.R;
+import com.sf_help.app.Splash;
 import com.sf_help.app.api.ApiClient;
 import com.sf_help.app.api.ApiInterface;
 
@@ -89,5 +90,11 @@ public class Login extends AppCompatActivity {
     public void register(View view) {
         startActivity(new Intent(Login.this, Registration.class));
         finish();
+    }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(Login.this, Splash.class));
+        super.onBackPressed();
     }
 }

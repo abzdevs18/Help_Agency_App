@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.sf_help.app.Home;
 import com.sf_help.app.R;
+import com.sf_help.app.Splash;
 
 public class Registration extends AppCompatActivity {
     Switch mUserType;
@@ -32,5 +33,11 @@ public class Registration extends AppCompatActivity {
         mUserType = findViewById(R.id.iUType);
         mUserType.setTextOff("No");
         mUserType.setTextOn("Yes");
+    }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(Registration.this, Login.class));
+        super.onBackPressed();
     }
 }

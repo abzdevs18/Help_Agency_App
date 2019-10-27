@@ -25,12 +25,24 @@ public class BidderProfile extends Fragment {
     androidx.appcompat.widget.Toolbar toolbar;
     Drawable upArrow;
     AppBarLayout mAppBarLayout;
+    int statusHeight = 0;
+    AppBarLayout chatAppBar;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_bidder_profile, container, false);
          upArrow = v.getResources().getDrawable(R.drawable.ic_arrow_back_black_24dp);
          mAppBarLayout = v.findViewById(R.id.appBarLayout);
+
+        // TODO: 10/27/2019 to make the appBar below to the status bar
+        chatAppBar = v.findViewById(R.id.appBarLayout);
+        int resourceId = getResources().getIdentifier("status_bar_height","dimen","android");
+        if (resourceId > 0){
+            statusHeight = getResources().getDimensionPixelSize(resourceId);
+            chatAppBar.setPadding(0,statusHeight,0,0);
+        }
+        //End status bar
 //
 //        toolbar = v.findViewById(R.id.profile_toolbar);
 //        ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
