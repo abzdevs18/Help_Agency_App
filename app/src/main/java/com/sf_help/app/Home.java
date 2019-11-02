@@ -4,7 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,12 +18,15 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.sf_help.app.Views.HomeFragments.BidderProfile;
 import com.sf_help.app.Views.HomeFragments.Category;
 import com.sf_help.app.Views.HomeFragments.Chat;
 import com.sf_help.app.Views.HomeFragments.Job;
 import com.sf_help.app.Views.HomeFragments.Profile;
 import com.sf_help.app.Views.HomeFragments.Search;
 import com.sf_help.app.Views.ProfileFragments.ProfileUpdate;
+
+import static java.lang.String.valueOf;
 
 public class Home extends AppCompatActivity {
     Fragment selectedFragment;
@@ -33,6 +38,7 @@ public class Home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
         mFrame = findViewById(R.id.fragment_holder);
         mFrame.bringToFront();
 
@@ -62,6 +68,24 @@ public class Home extends AppCompatActivity {
 //            Toast.makeText(this,"Kd",Toast.LENGTH_SHORT).show();
         hideBottomNavigationView(bottomNavigationView);
 
+        Intent intent = getIntent();
+        String value = intent.getStringExtra("Fragment");
+//        workerId From bidder Fragment
+        String workerId = intent.getStringExtra("workerId");
+
+        if (value.equals("Bidder")){
+            bottomNavigationView.getMenu().getItem(2).setChecked(true);
+            // TODO: 10/17/2019 We need the below 2 lines of code so that on startup it opens the Fragment Category with clicking first
+            selectedFragment = new BidderProfile();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_holder,selectedFragment,"Categeory").addToBackStack("category").commit();
+        }else if(value.equals("Job")){
+            bottomNavigationView.getMenu().getItem(2).setChecked(true);
+            // TODO: 10/17/2019 We need the below 2 lines of code so that on startup it opens the Fragment Category with clicking first
+            selectedFragment = new Job();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_holder,selectedFragment,"Categeory").addToBackStack("category").commit();
+
+        }
+
     }
     private BottomNavigationView.OnNavigationItemSelectedListener navListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override
@@ -81,6 +105,9 @@ public class Home extends AppCompatActivity {
                     break;
                 case R.id.navigation_job:
                     selectedFragment = new Job();
+                    Bundle bundle = new Bundle();
+                    bundle.putString("categoryId","");
+                    selectedFragment.setArguments(bundle);
                     tag = "Job";
                     break;
                 case R.id.navigation_search:

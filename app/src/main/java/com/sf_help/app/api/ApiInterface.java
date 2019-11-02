@@ -1,5 +1,7 @@
 package com.sf_help.app.api;
 
+import com.sf_help.app.Models.BiddersDialog;
+import com.sf_help.app.Models.Categories;
 import com.sf_help.app.Models.GetJob;
 import com.sf_help.app.Models.SignIn;
 
@@ -10,6 +12,7 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 public interface ApiInterface {
     @FormUrlEncoded
@@ -20,4 +23,13 @@ public interface ApiInterface {
             @Field("uPassword") String uPassword);
     @POST("api/getjobs")
     Call<List<GetJob>> availableJobs();
+
+    @POST("api/getJobCat/{categoryId}")
+    Call<List<GetJob>> availableJobs(@Path("categoryId") String categoryId);
+
+    @POST("api/getCatNum")
+    Call<List<Categories>> getCategories();
+
+    @GET("api/getbidders/{job_id}")
+    Call<List<BiddersDialog>> jobBidders(@Path("job_id") String jobBidder);
 }

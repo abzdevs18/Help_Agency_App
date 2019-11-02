@@ -71,8 +71,12 @@ public class Login extends AppCompatActivity {
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putString("User_Key", userId);
                     editor.apply();
-                    startActivity(new Intent(Login.this, Home.class));
-                    finish();
+                    Intent intent = new Intent(Login.this, Home.class);
+                    intent.putExtra("Fragment","Fragment");
+                    intent.putExtra("workerId",0);
+                    Login.this.startActivity(intent);
+//                    startActivity(new Intent(Login.this, Home.class));
+//                    finish();
                 }else{
                     Toast.makeText(getApplicationContext(),"Sorry something went wrong",Toast.LENGTH_LONG).show();
                 }

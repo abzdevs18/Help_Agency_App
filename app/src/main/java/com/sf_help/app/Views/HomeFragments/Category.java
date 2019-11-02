@@ -1,5 +1,7 @@
 package com.sf_help.app.Views.HomeFragments;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -22,50 +24,72 @@ import com.sf_help.app.Home;
 import com.sf_help.app.Models.Categories;
 import com.sf_help.app.R;
 import com.sf_help.app.Views.ProfileFragments.ProfileUpdate;
+import com.sf_help.app.api.ApiClient;
+import com.sf_help.app.api.ApiInterface;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class Category extends Fragment {
     BottomNavigationView mBottomNav;
     List<Categories> listCat;
 
     CardView mGardening;
+    RecyclerView mRecycler;
+
+//    OnCategoryId categoryId;
+//
+//    public interface OnCategoryId{
+//        public void OnIdSent(String categoryId);
+//    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View v = inflater.inflate(R.layout.fragment_category, container, false);
 
-        listCat = new ArrayList<>();
-        listCat.add(new Categories("Carpentry","34 Jobs",R.drawable.helmet));
-        listCat.add(new Categories("Groceries","34 Jobs",R.drawable.check));
-        listCat.add(new Categories("Baby Seating","34 Jobs",R.drawable.boy));
-        listCat.add(new Categories("Plumbing","34 Jobs",R.drawable.leak));
-        listCat.add(new Categories("Gardening","34 Jobs",R.drawable.plant));
-        listCat.add(new Categories("Carpentry","34 Jobs",R.drawable.helmet));
+        getCategory();
 
-        RecyclerView mRecycler = v.findViewById(R.id.cat_recycler);
-        CategoryRecyclerAdapter categoryRecyclerAdapter = new CategoryRecyclerAdapter(getContext(),listCat);
-        mRecycler.setLayoutManager(new GridLayoutManager(getContext(),2));
-        mRecycler.setAdapter(categoryRecyclerAdapter);
+        mRecycler = v.findViewById(R.id.cat_recycler);
 
-
-
-//        mGardening = v.findViewById(R.id.cardGardening);
-//        mGardening.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-////                startActivity(new Intent(v.getContext(),));
-//                Job jobFragment = new Job();
-//                FragmentManager fragmentManager = getFragmentManager();
-//                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-//                fragmentTransaction.replace(R.id.fragment_holder,jobFragment);
-//                fragmentTransaction.addToBackStack("Job");
-//                fragmentTransaction.commit();
-//            }
-//        });
 
         return v;
     }
+
+    private void getCategory() {
+        ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
+        Call<List<Categories>> call = apiInterface.getCategories();
+        call.enqueue(new Callback<List<Categories>>() {
+            @Override
+            public void onResponse(Call<List<Categories>> call, Response<List<Categories>> response) {
+                listCat = response.body();
+                CategoryRecyclerAdapter categoryRecyclerAdapter = new CategoryRecyclerAdapter(getContext(),listCat);
+                mRecycler.setLayoutManager(new GridLayoutManager(getContext(),2));
+                mRecycler.setAdapter(categoryRecyclerAdapter);
+            }
+
+            @Override
+            public void onFailure(Call<List<Categories>> call, Throwable t) {
+
+            }
+        });
+    }
+
+//    @Override
+//    public void onAttach(@NonNull Context context) {
+//        super.onAttach(context);
+//
+//        Activity activity = (Activity) context;
+//
+//        try {
+//            categoryId = (OnCategoryId) activity;
+//        }catch (ClassCastException e){
+//            throw new ClassCastException(activity.toString()+" must implement interface");
+//        }
+//    }
 }

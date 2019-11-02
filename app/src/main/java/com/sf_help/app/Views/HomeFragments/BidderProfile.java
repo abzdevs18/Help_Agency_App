@@ -1,6 +1,8 @@
 package com.sf_help.app.Views.HomeFragments;
 
 import android.app.ActionBar;
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
@@ -17,8 +19,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.ActionBarContainer;
 import androidx.appcompat.widget.ActionBarContainer;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.appbar.AppBarLayout;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.sf_help.app.Home;
 import com.sf_help.app.R;
 
 public class BidderProfile extends Fragment {
@@ -27,6 +34,10 @@ public class BidderProfile extends Fragment {
     AppBarLayout mAppBarLayout;
     int statusHeight = 0;
     AppBarLayout chatAppBar;
+    Context mContext;
+    Fragment selectedFragment;
+
+    BottomNavigationView bottomNavigationView;
 
     @Nullable
     @Override
@@ -42,32 +53,31 @@ public class BidderProfile extends Fragment {
             statusHeight = getResources().getDimensionPixelSize(resourceId);
             chatAppBar.setPadding(0,statusHeight,0,0);
         }
+
+         bottomNavigationView = v.findViewById(R.id.bottom_nav);
         //End status bar
 //
-//        toolbar = v.findViewById(R.id.profile_toolbar);
-//        ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
-//        ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//        ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayShowHomeEnabled(true);
-//        ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayShowTitleEnabled(false);
-////        upArrow.setColorFilter();
-//        ((AppCompatActivity)getActivity()).getSupportActionBar().setHomeAsUpIndicator(upArrow);
-//        ((AppCompatActivity)getActivity()).getSupportActionBar().setElevation(0);
+        toolbar = v.findViewById(R.id.profile_toolbar);
+        ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayShowHomeEnabled(true);
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayShowTitleEnabled(false);
+//        upArrow.setColorFilter();
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setHomeAsUpIndicator(upArrow);
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setElevation(0);
+
 
         return v;
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                // todo: goto back activity from here
-                Log.d("Home","Naa Home");
-
-                Toast.makeText(getActivity(),"HOMEEE",Toast.LENGTH_LONG).show();
-                return true;
-
-            default:
-                return super.onOptionsItemSelected(item);
+        switch (item.getItemId()){
+            case R.id.homeAsUp:
+                Log.d("Home","DDD");
+               return true;
+                default:
+                    return super.onOptionsItemSelected(item);
         }
     }
 }

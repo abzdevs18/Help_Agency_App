@@ -48,33 +48,73 @@
         android:layout_height="90dp"
         android:gravity="center_vertical"
         android:orientation="vertical">
-        <TextView
-            android:id="@+id/jobTitleOnListing"
-            android:paddingLeft="15dp"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Sr. UI UX Designer"
-            android:textAllCaps="false"
-            android:textSize="18sp"
-            android:textColor="#333"
-            android:fontFamily="@font/cern_bold"/>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="5dp"
-            android:paddingLeft="15dp">
-            <ImageView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:layout_gravity="center_vertical"
-                app:srcCompat="@drawable/ic_monetization"/>
+            android:layout_height="match_parent">
+
             <TextView
-                android:id="@+id/job_list_salary"
-                android:paddingLeft="5dp"
-                android:layout_width="match_parent"
+                android:id="@+id/job_type_"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="$60k-70k/Month"/>
-        </LinearLayout>
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/job_type_freelance"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:textColor="#fff"
+                android:textSize="10sp"
+                android:text="Freelance"
+                android:elevation="6dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+                app:layout_constraintTop_toTopOf="@+id/linearLayout"
+                app:layout_constraintVertical_bias="0.120000005" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/jobTitleOnListing"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/cern_bold"
+                    android:paddingLeft="15dp"
+                    android:text="Sr. UI UX Designer"
+                    android:textAllCaps="false"
+                    android:textColor="#333"
+                    android:textSize="18sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal"
+                    android:paddingLeft="15dp">
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center_vertical"
+                        app:srcCompat="@drawable/ic_monetization" />
+
+                    <TextView
+                        android:id="@+id/job_list_salary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="5dp"
+                        android:text="$60k-70k/Month" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
 </LinearLayout>
